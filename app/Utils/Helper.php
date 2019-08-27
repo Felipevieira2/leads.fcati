@@ -126,7 +126,7 @@ class Helper
      */
     static function removeMascara($string)
     {
-        return str_replace([".","_","/","-","(",")"," "], ["","","","","","",""], $string);
+        return str_replace([".","_","/","-","(",")"," ","+"], ["","","","","","","", ""], $string);
     }
 
 
@@ -166,7 +166,7 @@ class Helper
     }
 
     public static function DatetimeToMysql($data)
-    {   
+    {
         return \Carbon\Carbon::createFromFormat('d/m/Y H:i', $data)->format('Y/m/d H:i');
     }
 

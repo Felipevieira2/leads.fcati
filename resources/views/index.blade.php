@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             <label for="telefone">Telefone: </label>
-            <input type="text" class="form-control celular_ddd" name="telefone" id="telefone"  aria-describedby="telefone" placeholder="">  
+            <input type="text" class="form-control telefone_internacional" name="telefone" id="telefone"  aria-describedby="telefone" placeholder="+55 11 32301613" value="+55">
         </div>
         <div class="form-group">
             <label for="observacao">Observação: </label>
@@ -35,41 +35,5 @@
     </form>
     <br>
 </div>
-
-@endsection
-
-
-@section('js')
-<script>
-
-// Redireciona o usuário para a página da DevMedia após cinco segundos
-document.getElementById('telefone').addEventListener('blur', function()
-{   
-    if( this.value.length == 14 )
-    {
-        this.classList.add('telefone_ddd');
-        this.classList.remove('celular_ddd');
-        
-    }
-    if( this.value.length < 14 && this.value != '' )
-    {   
-        this.classList.add('is-invalid');
-        notificacao_erro('Número digitado inválido!');
-    }
-    if( this.value.length >= 14 )
-    {   
-        this.classList.remove('is-invalid');    
-    }
-});
-
-document.getElementById('telefone').addEventListener('focus', function()
-{   
-    this.classList.remove('telefone_ddd');
-    this.classList.add('celular_ddd');
-});
-
-
-
-</script>
 
 @endsection

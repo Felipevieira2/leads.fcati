@@ -13,10 +13,11 @@ $(document).ready(function(){
     $('.cep').mask('00000-000');
     $('.ip_address').mask('099.099.099.099');
     $('.telefone_ddd').mask('(00) 0000-0000');
+    $('.telefone_internacional').mask("+#");
     $('.celular_ddd').mask('(00) 00000-0000');
     $('.estado_uf').mask('AA', {'translation': {
-        A: {pattern: /[A-Za-z]/}   
-        
+        A: {pattern: /[A-Za-z]/}
+
     }});
     $('.money').mask('#0,00', {reverse: true});
 
@@ -27,5 +28,5 @@ $(document).ready(function(){
     });
     $('.onlyNumbers').mask("#");
 
-    
+
 });
