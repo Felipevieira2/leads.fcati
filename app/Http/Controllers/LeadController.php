@@ -15,20 +15,20 @@ class LeadController extends Controller
     }
 
     public function store(Request $request)
-    {   
+    {
         $request['telefone'] = Helper::removeMascara($request->telefone);
-        
+
         try{
-            
+
             Lead::create($request->all());
 
         }catch(\Exception $e){
-            
+
             \Log::error($e->getMessage());
 
         }
-           
-        return view('agradecimento');
+
+        return redirect('/lead/agradecimento');
     }
 
 }

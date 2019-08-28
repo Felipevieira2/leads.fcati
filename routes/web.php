@@ -14,3 +14,7 @@
 Route::get('/', 'LeadController@create');
 
 Route::post('/lead/novo', 'LeadController@store');
+
+Route::get('/lead/agradecimento', function(){
+    return view('agradecimento');
+});
